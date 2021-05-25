@@ -1,0 +1,43 @@
+<!--
+
+ <p>service works!</p>
+<p>{{title}}</p>
+<P>{{date | date: 'yyyy/MM/dd'}}</P>
+<P class="bg-warning">{{montant | currency: 'MAD'}}</P>
+
+<div *ngIf="contacts.length > 0;then listContacts else noContacts"> </div>
+
+<ng-template #listContacts> 
+   <h1 class=".bg-warning">Liste des contactes</h1> 
+   <ul>
+       <li *ngFor="let contact of contacts; index as i">
+           {{i+1}} - {{contact.name+0}}
+       </li>
+   </ul>
+</ng-template>
+
+<ng-template #noContacts> 
+    pas de contactes
+</ng-template>-->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Tel</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <th scope="row">{{contact.id}}</th>
+            <td>{{contact.name}}</td>
+            <td>{{contact.tel}}</td>
+            <td>{{contact.email}}</td>
+            <td class="btn bg-success m-2">edit</td>
+            <td class="btn bg-danger m-2">Delet</td>
+        </tr>
+    </tbody>
+</table>
+
+
